@@ -12,7 +12,6 @@
       margin: 0;
       padding: 0;
       color: #f1f1f1;
-      line-height: 1.6;
       background-color: #121212;
     }
 
@@ -22,13 +21,18 @@
 
     /* Header Styles */
     header {
-      background: #1f1f1f;
+      background: rgba(0, 0, 0, 0.6);
       color: #f1f1f1;
-      padding: 20px;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      transition: background 0.3s ease;
     }
 
     header .logo {
@@ -59,15 +63,20 @@
 
     /* Hero Section */
     .hero {
-      background: url('hero-banner-dark.jpg') no-repeat center center/cover;
+      background: linear-gradient(to right, #121212, #2c2c2c);
       color: white;
       text-align: center;
-      padding: 150px 20px;
+      padding: 200px 20px;
+      background-image: url('hero-banner-dark.jpg');
+      background-position: center;
+      background-size: cover;
+      background-blur: 5px;
     }
 
     .hero h1 {
       font-size: 4rem;
       margin-bottom: 15px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
     }
 
     .hero p {
@@ -83,136 +92,106 @@
       text-decoration: none;
       border-radius: 5px;
       transition: background 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     .hero .cta-button:hover {
       background: #00cc7a;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
 
-    /* Section Styles */
-    section {
+    /* Product Section */
+    section#products {
       padding: 80px 20px;
       text-align: center;
-    }
-
-    section#about {
       background: #1f1f1f;
     }
 
-    section h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-      color: #00ff9d;
-    }
-
-    section p {
-      font-size: 1.2rem;
-      max-width: 900px;
-      margin: 0 auto;
-      color: #f1f1f1;
-    }
-
-    /* Product Grid */
     .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      display: flex;
+      justify-content: center;
       gap: 30px;
+      flex-wrap: wrap;
       padding: 20px;
     }
 
     .product-card {
       background: #2c2c2c;
-      border: 1px solid #444;
       border-radius: 10px;
-      padding: 20px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 280px;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 30px;
     }
 
     .product-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
     }
 
     .product-card img {
-      max-width: 100%;
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
       border-radius: 8px;
       margin-bottom: 15px;
     }
 
     .product-card h2 {
-      font-size: 1.6rem;
-      margin-bottom: 10px;
+      font-size: 1.4rem;
       color: #f1f1f1;
+      margin-bottom: 10px;
     }
 
     .product-card p {
       font-size: 1rem;
       color: #c4c4c4;
-      margin-bottom: 15px;
-    }
-
-    .details-button {
-      display: inline-block;
-      padding: 12px 20px;
-      font-size: 1rem;
-      color: #f1f1f1;
-      background: #00ff9d;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-
-    .details-button:hover {
-      background: #00cc7a;
     }
 
     /* Contact Section */
     section#contact {
+      padding: 80px 20px;
       background: #181818;
-    }
-
-    section#contact h1 {
-      font-size: 2.8rem;
-      margin-bottom: 30px;
-      color: #00ff9d;
+      text-align: center;
     }
 
     .contact-container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 30px;
+      justify-content: center;
+      gap: 40px;
     }
 
-    .contact-details, .owner-details {
+    .contact-details {
       background: #2c2c2c;
       padding: 30px;
       border: 1px solid #444;
       border-radius: 10px;
-      width: 48%;
+      width: 300px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
-    .contact-details h2, .owner-details h2 {
+    .contact-details h2 {
       font-size: 1.8rem;
-      margin-bottom: 15px;
-      color: #f1f1f1;
+      color: #00ff9d;
+      margin-bottom: 20px;
     }
 
-    .contact-details p, .owner-details p {
+    .contact-details p {
       font-size: 1rem;
       color: #c4c4c4;
       margin: 10px 0;
     }
 
-    .contact-details a, .owner-details a {
+    .contact-details a {
       color: #00ff9d;
       text-decoration: none;
       font-weight: bold;
     }
 
-    .contact-details a:hover, .owner-details a:hover {
+    .contact-details a:hover {
       text-decoration: underline;
     }
 
@@ -222,6 +201,7 @@
       color: #f1f1f1;
       text-align: center;
       padding: 20px 0;
+      margin-top: 40px;
     }
 
     footer .social-icons {
@@ -244,10 +224,15 @@
       font-size: 0.9rem;
       margin: 10px 0;
     }
+
+    /* Sticky Navigation Effect */
+    header.scrolled {
+      background: rgba(0, 0, 0, 0.9);
+    }
   </style>
 </head>
-<body>
-  <header>
+
+<header>
     <div class="logo">AS Enterprises</div>
     <nav>
       <ul>
@@ -258,49 +243,77 @@
     </nav>
   </header>
 
-  <section class="hero">
+<body>
+    <section class="hero">
     <h1>Welcome to AS Enterprises</h1>
-    <p>Your Trusted Partner in Packaging Solutions</p>
+    <p>Your trusted partner for packaging solutions.</p>
     <a href="#products" class="cta-button">Explore Our Products</a>
   </section>
 
-  <section id="about">
-    <h1>About Us</h1>
-    <p>AS Enterprises is a forward-thinking leader in the packaging industry, known for innovation and sustainability. We provide a range of eco-friendly packaging solutions tailored for e-commerce, logistics, and manufacturing sectors.</p>
-  </section>
 
-  <section id="products">
+<section id="products">
     <h1>Our Products</h1>
     <div class="product-grid">
       <div class="product-card">
-        <img src="bubble_wrap.jpg" alt="Bubble Wrap">
+        <img src="images/bubble wrap.jpg" alt="Bubble Wrap">
         <h2>Bubble Wrap</h2>
-        <p>Flexible, transparent plastic for protecting fragile items during storage and shipping.</p>
-        <a href="#" class="details-button">View Details</a>
+        <p>Protects fragile items during shipping. Ideal for electronics, glassware, and delicate materials.</p>
       </div>
       <div class="product-card">
-        <img src="honeycomb_wrap.jpg" alt="Honeycomb Paper Wrap">
+        <img src="images/honey.jpg" alt="Honeycomb Paper Wrap">
         <h2>Honeycomb Paper Wrap</h2>
-        <p>Eco-friendly material offering superior protection and shock absorption.</p>
-        <a href="#" class="details-button">View Details</a>
+        <p>Eco-friendly cushioning material for sustainable packaging. Perfect for e-commerce and retail use.</p>
       </div>
       <div class="product-card">
-        <img src="corrugated_boxes.jpg" alt="Corrugated Boxes">
+        <img src="images/box.jpg" alt="Corrugated Boxes">
         <h2>Corrugated Boxes</h2>
-        <p>Durable boxes ideal for shipping and storage, with customizable options available.</p>
-        <a href="#" class="details-button">View Details</a>
+        <p>Durable and customizable boxes for packaging and shipping. Suitable for all industries.</p>
+      </div>
+      <div class="product-card">
+        <img src="images/wooden.jpg" alt="Wooden Box">
+        <h2>Wooden Boxes</h2>
+        <p>Heavy-duty containers for industrial shipping and storage. Ensures safety for bulky items.</p>
+      </div>
+      <div class="product-card">
+        <img src="images/tapes.jpg" alt="Crop BOPP Tapes">
+        <h2>Crop BOPP Tapes</h2>
+        <p>High-strength adhesive tapes for secure packaging. Available in various sizes and prints.</p>
       </div>
     </div>
   </section>
 
- <section id="contact">
+  <section id="contact">
     <h1>Contact Us</h1>
     <div class="contact-container">
       <div class="contact-details">
-        <h2>Get in Touch</h2>
-        <p><strong>Phone:</strong> +91 7387358969</p>
-        <p><strong>Email:</strong> 
-          <a href="mailto:assenterprises27@gmail.com">assenterprises27@gmail.com</a>, 
-          <a href="mailto:srshinde2761999@gmail.com">srshinde2761999
+        <h2>Our Office</h2>
+        <p>123 Packaging Avenue</p>
+        <p>City, Country</p>
+        <p><a href="tel:+1234567890">+1 234 567 890</a></p>
+        <p><a href="mailto:info@asenterprises.com">info@asenterprises.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank" class="fab fa-facebook"></a>
+      <a href="https://twitter.com" target="_blank" class="fab fa-twitter"></a>
+      <a href="https://instagram.com" target="_blank" class="fab fa-instagram"></a>
+      <a href="https://linkedin.com" target="_blank" class="fab fa-linkedin"></a>
+    </div>
+    <p>&copy; 2024 AS Enterprises. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
 </body>
 </html>
